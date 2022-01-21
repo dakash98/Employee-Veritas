@@ -1,5 +1,10 @@
 <template>
   <div id="nav">
+    <img
+      alt="Vue logo"
+      src="@/assets/employee-logo.png"
+      class="employee-logo"
+    />
     <!-- <router-link to="/">Home</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/sign-up">Sign Up</router-link> -->
@@ -28,5 +33,13 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.employee-logo {
+  top: 25px;
+  left: 50px;
+  width: 112px;
+  height: 70px;
+  opacity: 1;
 }
 </style>

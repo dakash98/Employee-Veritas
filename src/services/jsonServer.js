@@ -10,13 +10,13 @@ const apiClient = axios.create({
 });
 
 export default {
-  getEvents() {
+  getUsers() {
     return apiClient.get("/users");
   },
-  getEvent(id) {
+  getUser(id) {
     return apiClient.get("/users/" + id);
   },
-  postEvent(event) {
+  postUser(event) {
     return apiClient.post("/users", event);
   },
 };

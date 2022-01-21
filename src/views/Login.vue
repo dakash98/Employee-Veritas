@@ -33,7 +33,7 @@ export default {
   methods: {
     onSubmit() {
       server
-        .getEvent(1)
+        .getUser(1)
         .then((response) => {
           console.log("==== ", response.data);
         })
