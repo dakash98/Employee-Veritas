@@ -1,11 +1,17 @@
 <template>
   <div class="outer">
-    <h3 style="background-color: yellow" v-if="message">{{ message }}</h3>
+    <h3
+      class="set-color"
+      :style="{ 'background-color': response_object.color }"
+      v-if="response_object.message"
+    >
+      {{ response_object.message }}
+    </h3>
     <div class="inner">
-      <BaseInput v-model="employee.username" label="Username" type="text" />
+      <BaseInput v-model="user.email" label="Username" type="text" />
       <br /><br />
 
-      <BaseInput v-model="employee.password" label="Password" type="password" />
+      <BaseInput v-model="user.password" label="Password" type="password" />
       <br /><br />
 
       <button @click="onSubmit">Submit</button>
@@ -13,7 +19,7 @@
       <h4>
         Not Registered Yet ? <router-link to="/sign-up">Sign Up</router-link>
       </h4>
-      <pre>{{ employee }}</pre>
+      <pre>{{ user }}</pre>
     </div>
   </div>
 </template>
@@ -23,23 +29,29 @@ import server from "@/services/jsonServer.js";
 export default {
   data() {
     return {
-      employee: {
-        username: "",
+      user: {
+        email: "",
         password: "",
       },
-      message: "",
+      response_object: {
+        message: "",
+        color: "",
+      },
     };
   },
   methods: {
     onSubmit() {
       server
-        .getUser(1)
+        .loginUser(this.user)
         .then((response) => {
-          console.log("==== ", response.data);
+          this.response_object.message = "Hurrah!!! Logged In Successfully...";
+          this.response_object.color = "green";
+          console.log(response);
         })
         .catch((error) => {
           console.log("error is ", error);
-          this.message = error;
+          this.response_object.message = error;
+          this.response_object.color = "red";
         });
     },
   },
@@ -53,5 +65,8 @@ export default {
 .inner {
   display: table;
   margin: 0 auto;
+}
+.set-color {
+  color: white;
 }
 </style>

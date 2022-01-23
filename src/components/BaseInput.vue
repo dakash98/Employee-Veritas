@@ -6,7 +6,7 @@
     :placeholder="label"
     class="field"
     :value="modelValue"
-    @input="checkValue"
+    @input="$emit('update:modelValue', $event.target.value)"
   />
 </template>
 
@@ -20,17 +20,6 @@ export default {
     modelValue: {
       type: [String, Number],
       default: "",
-    },
-  },
-  methods: {
-    checkValue(event) {
-      if (
-        (this.label.toLowerCase() == "password" &&
-          event.target.value.length > 8) ||
-        this.label.toLowerCase() == "username"
-      ) {
-        this.$emit("update:modelValue", event.target.value);
-      }
     },
   },
 };

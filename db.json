@@ -1,9 +1,15 @@
 {
   "users": [
     {
-      "id": "1",
-      "username": "dakash98@outlook.com",
-      "password": "Akash@123"
+      "email": "dakash98@outlook.com",
+      "password": "$2a$10$ojb4atnrluNG8d/fAZo4Ju0VjMw6OBwuvPskfyxXkwrt5nfRDXAu2",
+      "permission": "admin",
+      "id": 1
+    },
+    {
+      "email": "praveen@outlook.com",
+      "password": "$2a$10$02LDVf6UEYYoMGQN3zYWUeKHkFAw1XHX0J0B5pGuUNWSXNtjvfUwi",
+      "id": 2
     }
   ]
 }
