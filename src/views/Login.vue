@@ -1,12 +1,5 @@
 <template>
   <div class="outer">
-    <h3
-      class="set-color"
-      :style="{ 'background-color': response_object.color }"
-      v-if="response_object.message"
-    >
-      {{ response_object.message }}
-    </h3>
     <div class="inner">
       <BaseInput v-model="user.email" label="Username" type="text" />
       <br /><br />
@@ -14,12 +7,11 @@
       <BaseInput v-model="user.password" label="Password" type="password" />
       <br /><br />
 
-      <button @click="onSubmit">Submit</button>
+      <button data-testid="submit" @click="onSubmit">Submit</button>
       <br /><br />
       <h4>
         Not Registered Yet ? <router-link to="/sign-up">Sign Up</router-link>
       </h4>
-      <pre>{{ user }}</pre>
     </div>
   </div>
 </template>
@@ -33,26 +25,33 @@ export default {
         email: "",
         password: "",
       },
-      response_object: {
-        message: "",
-        color: "",
-      },
     };
   },
   methods: {
     onSubmit() {
+      if (this.checkUserFields()) {
+        return 0;
+      }
       server
         .loginUser(this.user)
         .then((response) => {
-          this.response_object.message = "Hurrah!!! Logged In Successfully...";
-          this.response_object.color = "green";
           console.log(response);
+          alert("logged in successfully, status : " + response.status);
         })
         .catch((error) => {
           console.log("error is ", error);
-          this.response_object.message = error;
-          this.response_object.color = "red";
+          alert("Please Enter Correct Username & password");
         });
+      this.clearFormInputs();
+    },
+    clearFormInputs() {
+      this.user["email"] = "";
+      this.user["password"] = "";
+    },
+    checkUserFields() {
+      return this.user.email.length === 0 || this.user.password.length === 0
+        ? true
+        : false;
     },
   },
 };
