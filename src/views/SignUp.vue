@@ -10,16 +10,13 @@
       <BaseInput v-model="user.name" label="Name" type="text" />
       <br /><br />
 
-      <BaseInput
-        v-model="user.contact_number"
-        label="Contact Number"
-        type="text"
-      />
+      <BaseInput v-model="user.contact_number" label="Mobile No." type="text" />
       <br /><br />
 
-      <button data-testid="submit" @click="registerUser">SignUp</button>
-      <br /><br />
-      <h4>Already Registered ? <router-link to="/">Login</router-link></h4>
+      <button data-testid="submit" id="submit" @click="registerUser">
+        SignUp
+      </button>
+      <h4>Already Registered ? <router-link to="/login">Login</router-link></h4>
     </div>
   </div>
 </template>
@@ -57,7 +54,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .outer {
   width: 100%;
 }
@@ -67,5 +64,25 @@ export default {
 }
 .set-color {
   color: white;
+}
+#submit {
+  width: 100%;
+  background-color: #0f130f;
+  color: white;
+  padding: 14px 20px;
+  margin: 2px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#submit:hover {
+  background-color: #363836;
+}
+a {
+  color: rgb(46, 45, 45) !important;
+}
+h4 {
+  color: rgb(39, 38, 38) !important;
+  opacity: 0.8;
 }
 </style>

@@ -5,10 +5,12 @@
       <br /><br />
 
       <BaseInput v-model="user.password" label="Password" type="password" />
+      <p id="recover-password">
+        <router-link to="/reset">recover password?</router-link>
+      </p>
       <br /><br />
 
-      <button data-testid="submit" @click="onSubmit">Submit</button>
-      <br /><br />
+      <button data-testid="submit" id="submit" @click="onSubmit">Login</button>
       <h4>
         Not Registered Yet ? <router-link to="/sign-up">Sign Up</router-link>
       </h4>
@@ -54,7 +56,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .outer {
   width: 100%;
 }
@@ -64,5 +66,31 @@ export default {
 }
 .set-color {
   color: white;
+}
+#submit {
+  width: 100%;
+  background-color: #0f130f;
+  color: white;
+  padding: 14px 20px;
+  margin: -9px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#submit:hover {
+  background-color: #363836;
+}
+#recover-password {
+  text-align: right;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin: 0 !important;
+}
+a {
+  color: rgb(46, 45, 45) !important;
+}
+h4 {
+  color: rgb(39, 38, 38) !important;
+  opacity: 0.8;
 }
 </style>
