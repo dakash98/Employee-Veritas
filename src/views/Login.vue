@@ -1,7 +1,7 @@
 <template>
   <div class="outer">
     <div class="inner">
-      <BaseInput v-model="user.email" label="Username" type="text" />
+      <BaseInput v-model="user.email" label="Email" type="text" />
       <br /><br />
 
       <BaseInput v-model="user.password" label="Password" type="password" />
@@ -18,6 +18,7 @@
 
 <script>
 import server from "@/services/jsonServer.js";
+import global from "@/services/global.js";
 export default {
   data() {
     return {
@@ -42,11 +43,7 @@ export default {
           console.log("error is ", error);
           alert("Please Enter Correct Username & password");
         });
-      this.clearFormInputs();
-    },
-    clearFormInputs() {
-      this.user["email"] = "";
-      this.user["password"] = "";
+      this.user = global.clearFormInputs(this.user);
     },
     checkUserFields() {
       return this.user.email.length === 0 || this.user.password.length === 0

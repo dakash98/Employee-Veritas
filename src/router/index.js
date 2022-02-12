@@ -5,7 +5,7 @@ import SignUp from "../views/SignUp.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/login",
     name: "Login",
     component: Login,
   },
@@ -19,7 +19,7 @@ const routes = [
   //     import(/* webpackChunkName: "about" */ "../views/About.vue"),
   // },
   {
-    path: "/home",
+    path: "/",
     name: "Home",
     component: Home,
   },
