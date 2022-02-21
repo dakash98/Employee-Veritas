@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import SignUp from "../views/SignUp.vue";
 import Reset from "../views/ResetPassword.vue";
+import Dashboard from "../views/Dashboard.vue";
 
 const routes = [
   {
@@ -34,6 +35,11 @@ const routes = [
     name: "Reset",
     component: Reset,
   },
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    component: Dashboard,
+  }
 ];
 
 const router = createRouter({
