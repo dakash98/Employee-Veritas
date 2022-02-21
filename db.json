@@ -2,7 +2,7 @@
   "users": [
     {
       "email": "dakash98@outlook.com",
-      "password": "$2a$10$lycbag9jSBQ5N7I6xrLCmePliOFE0vhCMY.gFFJkKmN39gNZNTOwK",
+      "password": "$2a$10$Igk7G.k4mSqyQ5xGocFVcOXxHCkKaMIx3AYFZP8p10yFviSrhaSN2",
       "name": "Akash Deep",
       "contact_number": "08959526736",
       "permission": "user",
@@ -15,6 +15,19 @@
       "contact_number": "08959526736",
       "permission": "",
       "id": 2
+    },
+    {
+      "email": "dakash98@gmail.com",
+      "password": "$2a$10$9iGoPxdBK1c1.ApHGqZ3au4E0NRwXoDm76W3Zg5OogsefHTSjHyga",
+      "name": "Akash Deep",
+      "contact_number": "08959526736",
+      "permission": "user",
+      "id": 3
+    },
+    {
+      "email": "praveen@yahoo.com",
+      "password": "$2a$10$tv1UbUeZ8FJ7ZQOOJdl1GOkaJgA0TbBMsHYkuQwzIfHVkeY4KpSBq",
+      "id": 4
     }
   ]
 }

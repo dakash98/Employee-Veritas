@@ -28,6 +28,6 @@ export default {
   },
   updateUser(user_data) {
     // PATCH  /users/id  ----> creates or updates a user field already registered
-    return apiClient.patch("/users/", user_data);
+    return apiClient.put(`/users/${user_data.id}`, user_data);
   },
 };

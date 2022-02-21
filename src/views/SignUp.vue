@@ -66,10 +66,10 @@ export default {
   color: white;
 }
 #submit {
-  width: 100%;
+  width: 30vw;
   background-color: #0f130f;
   color: white;
-  padding: 14px 20px;
+  padding: 17px 20px;
   margin: 2px 0;
   border: none;
   border-radius: 4px;
