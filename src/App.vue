@@ -1,17 +1,34 @@
 <template>
   <div id="nav">
-    <img
-      alt="Vue logo"
-      src="@/assets/employee-logo.png"
-      class="employee-logo"
-    />
-    <!-- <router-link to="/">Home</router-link> |
-    <router-link to="/login">Login</router-link> |
+    <div>
+      <img
+        alt="Vue logo"
+        src="@/assets/employee-logo.png"
+        class="employee-logo"
+        @click="routeToHome"
+      />
+    </div>
+    <div style="font-size: 20px; text-align: right; margin-top: -4%">
+      <router-link to="/login">Login</router-link> |
+      <router-link to="/sign-up">Sign Up</router-link>
+    </div>
+
+    <!-- <router-link to="/">Home</router-link> | -->
+    <!-- <router-link to="/login">Login</router-link> |
     <router-link to="/sign-up">Sign Up</router-link> -->
     <!-- <router-link to="/login">Login</router-link> -->
   </div>
   <router-view />
 </template>
+<script>
+export default {
+  methods: {
+    routeToHome() {
+      this.$router.push({ path: "/" });
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -19,11 +36,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
-  color: #2c3e50;
+  /* background-color: #e0e1e4; */
 }
 
 #nav {
-  padding: 30px;
+  padding: 2%;
 }
 
 #nav a {
