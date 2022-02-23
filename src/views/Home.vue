@@ -1,8 +1,12 @@
 <template>
   <div class="home">
-    <!-- <router-link to="/">Login</router-link> |
-    <router-link to="/sign-up">Sign Up</router-link> -->
-    <h2>This is a sample app</h2>
+    <base-logo />
+    <div id="nav">
+      <div style="font-size: 20px; text-align: right; margin-top: -4%">
+        <router-link to="/login">Login</router-link> |
+        <router-link to="/sign-up">Sign Up</router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,7 +18,4 @@ export default {
 };
 </script>
 <style scoped>
-.home {
-  text-align: center;
-}
 </style>
