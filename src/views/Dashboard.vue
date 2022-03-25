@@ -1,7 +1,14 @@
 <template>
-  <base-side-bar />
+  <div class="dashboard">
+    <base-side-bar />
+    <base-content />
+  </div>
 </template>
 
 <script></script>
 
-<style scoped></style>
+<style scoped>
+.dashboard {
+  display: flex;
+}
+</style>
